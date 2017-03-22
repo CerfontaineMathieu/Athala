@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/PersoName"
+        android:layout_alignTop="@+id/lifepointIcon"
+        android:ems="10"
+        android:inputType="number" />
+
+    <ImageView
+        android:id="@+id/PersoNameIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/personname"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/PersoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_alignBottom="@+id/PersoNameIcon"
+        android:layout_toEndOf="@+id/PersoNameIcon" />
+
+    <ImageView
+        android:id="@+id/lifepointIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/PersoNameIcon"
+        android:layout_below="@+id/PersoNameIcon"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/lifepointicon" />
+
+    <EditText
+        android:id="@+id/lifepoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_alignTop="@+id/lifepointIcon"
+        android:layout_alignStart="@+id/PersoName" />
+
+    <ImageView
+        android:id="@+id/manaIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        app:srcCompat="@drawable/manaicon"
+        android:layout_below="@+id/lifepointIcon"
+        android:layout_alignStart="@+id/lifepointIcon" />
+
+    <EditText
+        android:id="@+id/manapoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_alignTop="@+id/manaIcon"
+        android:ems="10"
+        android:inputType="number"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/AddUserFloatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@android:color/darker_gray"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
