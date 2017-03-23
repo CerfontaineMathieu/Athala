@@ -106,9 +106,11 @@ public class ThreadClient extends Thread {
                 }
             }
             try {
-                oos.close();
-                ois.close();
-                CSocket.close();
+                if(CSocket !=null) {
+                    oos.close();
+                    ois.close();
+                    CSocket.close();
+                }
             }catch(IOException ex)
             {
                 System.out.println("An error occured during the closing of the socket.");
