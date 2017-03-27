@@ -88,10 +88,7 @@ public class ThreadClient extends Thread {
                         System.out.println("Waiting login response...");
                         ois = new ObjectInputStream(CSocket.getInputStream());
                         ReponseAndroid rep = (ReponseAndroid) ois.readObject();
-                        if(rep.getCode()== ReponseAndroid.REPONSE_OK){
-                            System.out.println("Request succeed");
-                            LoginActivity.retRep=rep;
-                        }else{System.out.println("Request failed");}
+                        LoginActivity.retRep=rep;
                     } catch (IOException e) {
                         System.out.println("An error occured during the sending.");
                         finish=false;
