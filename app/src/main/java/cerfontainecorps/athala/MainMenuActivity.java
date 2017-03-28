@@ -52,15 +52,16 @@ public class MainMenuActivity extends AppCompatActivity implements AdapterView.O
         if(LoginActivity.retRep.getCode()== ReponseAndroid.REPONSE_OK)
         {
             MainUser = LoginActivity.retRep.getMainUser();
-            thCT = new ThreadClientTimeout(ThreadClient.ip,MainUser);
+            thCT = new ThreadClientTimeout(ThreadClient.ip, MainUser);
             thCT.start();
             CharacList = MainUser.getListOfCharac();
-            if(CharacList.size()>0) {
+            if (CharacList.size() > 0) {
                 Charac_lv = (ListView) findViewById(R.id.CharactersList);
                 adapterList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, CharacList);
                 Charac_lv.setAdapter(adapterList);
                 Charac_lv.setOnItemClickListener(this);
             }
+
         }
     }
 
