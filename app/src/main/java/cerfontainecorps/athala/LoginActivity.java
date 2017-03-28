@@ -20,16 +20,17 @@ import Threads.ThreadClient;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     public static ThreadClient thC;
-    private Button ConnectButton;
+    public static Button ConnectButton;
     public static ReponseAndroid retRep = new ReponseAndroid(ReponseAndroid.REPONSE_OK);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        thC = new ThreadClient();
+        thC = new ThreadClient(this);
         thC.start();
         ConnectButton  = (Button)findViewById(R.id.ConnectButton);
         ConnectButton.setOnClickListener(this);
+        ConnectButton.setEnabled(false);
     }
 
     @Override
