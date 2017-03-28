@@ -18,6 +18,8 @@ import java.util.LinkedList;
 import AthalaData.User;
 import AthalaPayload.ReponseAndroid;
 import AthalaPayload.RequeteAndroid;
+import Threads.ThreadClient;
+import Threads.ThreadClientTimeout;
 
 /**
  * Created by Mathieu on 14-03-17.
@@ -28,6 +30,7 @@ public class MainMenuActivity extends AppCompatActivity implements AdapterView.O
     public static LinkedList CharacList;
     public static ArrayAdapter<String> adapterList;
     private User MainUser;
+    private ThreadClientTimeout thCT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,8 @@ public class MainMenuActivity extends AppCompatActivity implements AdapterView.O
         if(LoginActivity.retRep.getCode()== ReponseAndroid.REPONSE_OK)
         {
             MainUser = LoginActivity.retRep.getMainUser();
+            thCT = new ThreadClientTimeout(ThreadClient.ip,MainUser);
+            thCT.start();
             CharacList = MainUser.getListOfCharac();
             if(CharacList.size()>0) {
                 Charac_lv = (ListView) findViewById(R.id.CharactersList);

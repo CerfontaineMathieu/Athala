@@ -18,8 +18,8 @@ import cerfontainecorps.athala.LoginActivity;
 
 public class ThreadClient extends Thread {
     private boolean finish = true;
-    private String ip=null;
-    private String port = null;
+    public static String ip=null;
+    public static String port = null;
     private RequeteAndroid req=null;
 
     public void SetRequete(RequeteAndroid r)
