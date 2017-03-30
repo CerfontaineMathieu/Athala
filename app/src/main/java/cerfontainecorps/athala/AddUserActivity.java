@@ -39,6 +39,8 @@ public class AddUserActivity extends AppCompatActivity implements View.OnClickLi
                 if(!persoN.equals("") && !persoLife.equals("") && !persoMana.equals(""))
                 {
                     AthalaData.Character c = new AthalaData.Character(persoN);
+                    c.setMana(Integer.parseInt(persoMana));
+                    c.setPv(Integer.parseInt(persoLife));
                     MainMenuActivity.CharacList.add(c);
                     Intent intent = new Intent();
                     setResult(1, intent);
